@@ -11,67 +11,36 @@ class FoodControl < Sinatra::Base
   $veg = [{
 	 id: 0,
 	 title: "Courgette",
-	 body: "This is the first post",
-   image: '',
+	 body: "Corgettes are easy to grow",
+   image: 'https://i2-prod.manchestereveningnews.co.uk/incoming/article12478695.ece/ALTERNATES/s615/Fresh-zucchini-courgette.jpg',
   },
   {
     id: 1,
     title: "Tomato",
-    body: "This is the second post",
-    image: '',
+    body: "Tomatos are easy to grow",
+    image: 'https://www.rodalesorganiclife.com/sites/rodalesorganiclife.com/files/styles/listicle_slide_custom_user_phone_1x/public/airyspot_ahmad_faizal_yahya_102522.jpg?itok=Xnuv04tf',
   },
   {
     id: 2,
     title: "Rhubarb",
-    body: "This is the third post",
-    image: '',
-  }];
-
-  $flo = [{
-	 id: 0,
-	 title: "Hydrangers",
-	 body: "This is the first post",
-   image: '',
-  },
-  {
-    id: 1,
-    title: "Daffydils",
-    body: "This is the second post",
-    image: '',
-  },
-  {
-    id: 2,
-    title: "Lavender",
-    body: "This is the third post",
-    image: '',
+    body: "Rhubarb is easy to grow",
+    image: 'https://www.pomonafruits.co.uk/images/Rhubarb-Thompsons-Terrifically-Tasty.jpg',
   }];
 
   get "/" do
     @title = 'Homepage'
-    erb :'pages/homepage'
+    erb :'pages/home'
   end
 
   get "/veggies" do
     @title = 'Veggies'
     @info = $veg
-    erb :'pages/homepage'
-  end
-
-  get "/flowers" do
-    @info = $flo
-    @title = 'Flowers'
-    erb :'pages/homepage'
+    erb :'pages/infopage'
   end
 
   get "/veggies/:id" do
     id = params[:id].to_i
     @info = $veg[id]
-    erb :'pages/index'
-  end
-
-  get "/flowers/:id" do
-    id = params[:id].to_i
-    @info = $flo[id]
     erb :'pages/index'
   end
 
