@@ -1,7 +1,5 @@
 <h1><%= @title %></h1>
-<% @photos.each do |photo| %>
-  <div>
-    <h3><a href="/photos/<%= photo[:id] %>"><%= photo[:title] %></a></h3>
-    <img src="<%= photo[:img] %>" alt="">
-  </div>
-<% end %>
+
+<div>
+  <p><%= @info[:body] %></p>
+</div>

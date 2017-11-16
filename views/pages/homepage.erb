@@ -1,3 +1,8 @@
 <h1><%= @title %></h1>
 
-<p><%= @info %></p>
+<% @info.each do |info| %>
+  <div>
+    <h3><a href="/veggies/<%= info[:id] %>"><%= info[:title] %></a></h3>
+    <img src="<%= info[:image] %>" alt="">
+  </div>
+<% end %>
